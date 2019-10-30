@@ -1,0 +1,7 @@
+:root {
+  /* Color variables */
+  --white: hsla(0, 0%, 99.6%, 1);
+
+  /* Font */
+  --font-family--primary: Helvetica, Arial, sans-serif;
+}
