@@ -7,6 +7,7 @@
   <meta name="description" content="HTML5 Interactive Video Player">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -16,15 +17,15 @@
 
   <main role="main">
     <h1>Interactive Video Player</h1>
-    <video controls controlslist="nodownload">
+    <video class="video" controls controlslist="nodownload">
       <source src="video/video.mp4"
               type="video/mp4">
       <source src="video/video.ogg"
               type="video/ogg">
       <p>Your browser do not support HTML Video</p>
     </video>
-    <p>
-      <span>
+    <p class="captions">
+      <span data-start="0.240" data-end="4.130">
         1
         00:00:00,240 --> 00:00:04,130
         Now that we've looked at the architecture
@@ -119,6 +120,7 @@
       </span>
     </p>
   </main>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
