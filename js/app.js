@@ -1,5 +1,8 @@
 console.log('program start')
 
+// Caption container
+const container = document.querySelector('.captions')
+
 // Select caption spans
 const captions = document.querySelectorAll('span');
 
@@ -7,13 +10,18 @@ const captions = document.querySelectorAll('span');
 const video = document.querySelector('.video');
 
 // Let user click on captions
-document.addEventListener('click', e => {
-  console.log(e.target);
-  // video.play();
-  const currentTime = e.target.dataset.start;
-  video.currentTime = currentTime;
-  video.play();
+container.addEventListener('click', e => {
+
+  // We only want the span elements to set currentTime (through data-start)
+  // ,else we get an error on non-finite numbers when clicking outside of a span
+  if (e.target.nodeName === 'SPAN') {
+    // TODO: Make use of promise
+    const currentTime = e.target.dataset.start;
+    video.currentTime = currentTime;
+    video.play();
+  }
 })
+
 
 video.addEventListener('timeupdate', (event) => {
 
