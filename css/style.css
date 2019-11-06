@@ -10,3 +10,7 @@
 .highlight {
   background-color: hsla(54, 100%, 50%, 1);
 }
+
+span {
+  cursor: pointer;
+}
