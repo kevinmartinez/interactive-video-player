@@ -6,6 +6,15 @@ const captions = document.querySelectorAll('span');
 // Log current video time
 const video = document.querySelector('.video');
 
+// Let user click on captions
+document.addEventListener('click', e => {
+  console.log(e.target);
+  // video.play();
+  const currentTime = e.target.dataset.start;
+  video.currentTime = currentTime;
+  video.play();
+})
+
 video.addEventListener('timeupdate', (event) => {
 
   // Loop through captions
@@ -16,13 +25,15 @@ video.addEventListener('timeupdate', (event) => {
     // Add highlight class dependent on currenTime
     if(video.currentTime > item.dataset.start && video.currentTime < item.dataset.end) {
       console.dir(item)
-      console.log(item.textContent)
+      // console.log(item.textContent)
 
       // TODO: Research IF toggle can be used
       // item.classList.toggle('highlight');
       item.classList.add('highlight')
+      //item.classList.toggle('highlight');
     } else {
       item.classList.remove('highlight')
+      // item.classList.toggle('highlight', false);
     }
 
   })
