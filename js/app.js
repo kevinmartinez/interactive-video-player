@@ -4,7 +4,7 @@ console.log('program start')
 const container = document.querySelector('.captions')
 
 // Select caption spans
-const captions = document.querySelectorAll('span');
+const captions = document.querySelectorAll('.caption');
 console.dir(captions)
 
 // Select video
