@@ -11,6 +11,18 @@ figure {
   margin: 0;
 }
 
+/* Helpers */
+
+.hidden {
+  /* Visually hide this content */
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Layout */
+
 .container {
   max-width: 724px;
   margin-left: auto;
