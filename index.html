@@ -15,15 +15,25 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <main role="main">
+  <main class="container">
     <h1>Interactive Video Player</h1>
-    <video class="video" controls>
-      <source src="video/video.mp4"
-              type="video/mp4">
-      <source src="video/video.ogg"
-              type="video/ogg">
-      <p>Your browser do not support HTML Video</p>
-    </video>
+    <figure id="videoContainer">
+      <video class="video" controls>
+          <source src="video/video.mp4"
+                  type="video/mp4">
+          <source src="video/video.ogg"
+                  type="video/ogg">
+          <p>Your browser do not support HTML Video</p>
+        </video>
+        <div id="video-controls" class="controls">
+          <button id="playpause" type="button" data-state="play">Play/Pause</button>
+          <button id="stop" type="button">Stop</button>
+          <progress id="progress" class="progress" value="0" min="0"></progress>
+          <button id="volUp" type="button">Vol+</button>
+          <button id="volDown" type="button">Vol-</button>
+          <button id="fullscreen" type="button">Fullscreen</button>
+        </div>
+    </figure>
     <section class="captions">
       <h2>Subtitles</h2>
       <p>
