@@ -16,6 +16,8 @@ video.controls = false; // Hide default video controls
 
 // TODO: Play when clicking video area as well
 playpause.addEventListener('click', () => {
+  playpause.setAttribute('data-state', playpause.getAttribute('data-state') === 'play' ? 'pause' : 'play');
+  
   if (video.paused || video.ended) {
     console.log('Video Playing')
     video.play();

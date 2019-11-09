@@ -6,6 +6,17 @@
   --font-family--primary: Helvetica, Arial, sans-serif;
 }
 
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 724px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* TODO: Tidy up */
 .highlight {
   color: hsla(28, 80%, 52%, 1);
@@ -25,4 +36,53 @@ span:hover {
   box-shadow: inset 0 0 15px hsla(28, 80%, 52%, 0.3);
   transition: all 1s;
   transition-timing-function: ease-in-out;
+}
+
+/* Custom video player */
+.video {
+  max-width: 100%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.controls progress {
+  background: white;
+}
+
+progress::-webkit-progress-value,
+progress::-moz-progress-bar {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.controls button[data-state="play"] {
+  background-image: url('../icons/play-button.png');
+}
+
+.controls button[data-state="pause"] {
+  background-image: url('../icons/pause-button.png')
+}
+
+.progress {
+  flex-grow: 2;
 }
